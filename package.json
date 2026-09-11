@@ -1,0 +1,43 @@
+{
+  "name": "sylo-allen-bradley",
+  "version": "0.1.0",
+  "description": "Studio 5000 Logix Designer SDK wrapper — controller upload/download and ACD↔L5X export/import. The SDK itself is not bundled (operator-licensed wheel); PLC comms live in sylo-plc-comms, L5X parse/IO scaffold in sylo-logicforge.",
+  "type": "module",
+  "keywords": [
+    "pi-package"
+  ],
+  "scripts": {},
+  "pi": {
+    "extensions": [
+      "./extensions/index.ts"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "^0.84.2"
+  },
+  "dependencies": {
+    "typebox": "^1.1.24"
+  },
+  "license": "MIT",
+  "gitHead": "f05700bce9bf8ef8574894f24a8a3fa71da11d61",
+  "dist": {
+    "integrity": "sha512-nPQY4E++Z3nVGMyUgVPKC/sI5pofikYCTqbfuoVtAIB9l5mp40UNtqWMl2a1nBNeF4hNJPOhvQwzpBhfKu/qlw==",
+    "shasum": "9cf5f38cfbf4107e56d1e49dce9f7a154b3caea2",
+    "tarball": "https://registry.npmjs.org/sylo-allen-bradley/-/sylo-allen-bradley-0.1.0.tgz",
+    "fileCount": 24,
+    "unpackedSize": 107200,
+    "signatures": [
+      {
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U",
+        "sig": "MEUCIQCumDTVXb900OCD/u25sSpEKE5pn1YSeL8+WwoiQ0R9JAIgRXXZK+QDF67BxFx2SutdtKin34BgIp7eHWcTX5SSdcY="
+      }
+    ]
+  },
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "yeti-trix",
+      "email": "spencer.current@gmail.com"
+    }
+  ]
+}
