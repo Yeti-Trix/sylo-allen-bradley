@@ -1,0 +1,30 @@
+# Publishes to npm via Trusted Publishing (OIDC — no tokens).
+# npm side: package Settings -> Trusted publishing -> GitHub Actions ->
+#   user Yeti-Trix, this repo, workflow filename publish.yml.
+# Release flow: bump package.json version -> commit -> tag vX.Y.Z -> push tag.
+# Provenance attestations are generated automatically (public repo + package).
+name: Publish Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+      - run: npm install
+      - run: npm run build --if-present
+      - run: npm publish
