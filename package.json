@@ -1,6 +1,6 @@
 {
   "name": "sylo-allen-bradley",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Studio 5000 Logix Designer SDK wrapper — controller upload/download and ACD↔L5X export/import. The SDK itself is not bundled (operator-licensed wheel); PLC comms live in sylo-plc-comms, L5X parse/IO scaffold in sylo-logicforge.",
   "type": "module",
   "keywords": [
