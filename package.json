@@ -39,5 +39,9 @@
       "name": "yeti-trix",
       "email": "spencer.current@gmail.com"
     }
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yeti-Trix/sylo-allen-bradley.git"
+  }
 }
