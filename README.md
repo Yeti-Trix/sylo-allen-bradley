@@ -35,3 +35,10 @@ controller project. It is hard-gated by the operator-managed allowlist whose
 canonical file lives in `sylo-logicforge`
 (`packages/sylo-logicforge/assets/download-allowlist.json`) — the agent cannot
 download to any IP not present and enabled there.
+
+
+## Install
+
+`pi install npm:sylo-allen-bradley` — or from the **Capability manager → Pi.dev package catalog** in Sylo (it appears in the Sylo packages strip).
+
+Releases publish automatically from GitHub Actions (npm trusted publishing, with provenance): bump `version` in `package.json`, commit, tag `vX.Y.Z`, push the tag.
