@@ -39,6 +39,25 @@ download to any IP not present and enabled there.
 
 ## Install
 
-`pi install npm:sylo-allen-bradley` — or from the **Capability manager → Pi.dev package catalog** in Sylo (it appears in the Sylo packages strip).
+Harness-neutral MCP server — same package, three ways:
+
+**pi** (via pi-mcp-adapter): `pi install npm:sylo-allen-bradley`. The adapter
+reads the bundled `.mcp.json` (declared as `pi.mcp` in package.json) and
+registers the server automatically. Set `toolPrefix: "none"` in adapter
+settings so tool names stay exactly `allen_bradley_sdk_*`.
+
+**Claude Code**: git clone the repo — Claude Code picks up the root `.mcp.json`
+natively. No extra deps for the MCP server itself (stdlib only).
+
+**Codex**: git clone, then `codex mcp add allen-bradley -- python server/server.py`.
+
+Python: the MCP server runs on any 3.10+; the wrapped SDK scripts run on the
+SDK Python 3.12 (`SYLO_SDK_PYTHON` env or `py -3.12` on Windows) and need the
+licensed Studio 5000 v36+ wheel (resolution order in `scripts/_sdk_paths.py`).
+Without it, tools load but report the SDK is missing.
 
 Releases publish automatically from GitHub Actions (npm trusted publishing, with provenance): bump `version` in `package.json`, commit, tag `vX.Y.Z`, push the tag.
+
+> 0.2.0: the pi TypeScript extension was removed — the MCP server
+> (`server/server.py`, official `mcp` SDK) is now the only tool surface. Tools,
+> args, JSON contracts, timeouts and allowlist enforcement are unchanged.

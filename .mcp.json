@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "allen-bradley": {
+      "command": "python",
+      "args": ["server/server.py"]
+    }
+  }
+}
